@@ -3,7 +3,8 @@ const luamin = require('lua-format');
 
 const pattern = /\b[A-Za-z0-9_]+\[[A-Za-z0-9_]+\] = [A-Za-z0-9_]+;/g; // Regular expression to match table assignments (e.g., a[b] = c)
 
-file_system.readFile('input.lua', 'utf8', (read_error, script) => { // Read the script file
+// Read the script file
+file_system.readFile('input.lua', 'utf8', (read_error, script) => { 
   if (read_error) { 
     console.error('Error reading the file:', read_error);
     return;
@@ -29,7 +30,8 @@ file_system.readFile('input.lua', 'utf8', (read_error, script) => { // Read the 
     return;
   }
 
-  file_system.writeFile('output.lua', modified, (write_error) => { // Write the modified script to a new file
+// Write the modified script to a new file
+  file_system.writeFile('output.lua', modified, (write_error) => { 
     if (write_error) {
       console.error('Error writing to file:', write_error);
       return;
